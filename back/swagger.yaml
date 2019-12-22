@@ -1,0 +1,63 @@
+swagger: "2.0"
+info:
+  title: Sample API
+  description: API description in Markdown.
+  version: 1.0.0
+host: localhost:3000
+basePath:
+schemes:
+  - http
+paths:
+  /users:
+    post:
+      summary: register
+      description: create an account.
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: register credentials
+          description: credentials
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+                example: test@test.com
+              name:
+                type: string
+                example: james bond
+              password:
+                type: string
+                example: password
+      responses:
+        201:
+          description: konto utworzone
+        400:
+          description: nie udalo sie
+
+
+  /users/login:
+    post:
+      summary: login
+      description: login to an account
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: login credentials
+          description: credentials
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+                example: test@test.com
+              password:
+                type: string
+                example: test@test.com
+      responses:
+        200:
+          description: logowanie sie powiodlo
+        400:
+          description: zle haslo/login

@@ -1,0 +1,16 @@
+{
+  "auth": {
+    "google": {
+      "clientId": "",
+      "clientSecret": ""
+    },
+    "github": {
+      "clientId" : "f7417d3aec7f832dc20b",
+      "clientSecret": "3e692ebbb960170793a5145c030374d39bcbdb25"
+    },
+    "facebook": {
+      "clientId": "3511646252193280",
+      "clientSecret" : "7ce62d4e0f9b96d54ffdd3b99183e3e7"
+    }
+  }
+}
