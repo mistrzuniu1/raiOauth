@@ -77,7 +77,10 @@
                 var mzkResponse = this.$store.state.mzkResponse;
                 if (Object.keys(mzkResponse).length === 0) return;
 
-                var stopId = mzkResponse['2019-12-22']['stops'].find(p => p.stopName == stopName).stopId;
+                var currentDateWithFormat = new Date().toJSON().slice(0,10).toString()
+                console.log(currentDateWithFormat);
+
+                var stopId = mzkResponse[currentDateWithFormat]['stops'].find(p => p.stopName == stopName).stopId;
                 this.favStopName = stopName;
                 this.favStopId = stopId;
             }

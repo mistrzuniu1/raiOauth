@@ -13,7 +13,9 @@ export default new Vuex.Store({
             return state.favStops;
         },
         getAllStopsForToday: state => {
-            return state.mzkResponse['2019-12-22']['stops'];
+            var currentDateWithFormat = new Date().toJSON().slice(0,10).toString()
+            console.log(currentDateWithFormat);
+            return state.mzkResponse[currentDateWithFormat]['stops'];
         },
         getStopsWithFriendlyName: state => {
             var friendlyNames = [];
@@ -21,7 +23,9 @@ export default new Vuex.Store({
 
 
             for (const id of state.favStops){
-                var name = state.mzkResponse['2019-12-22']['stops'].find(p => p.stopId == id).stopName;
+                var currentDateWithFormat = new Date().toJSON().slice(0,10).toString()
+                console.log(currentDateWithFormat);
+                var name = state.mzkResponse[currentDateWithFormat]['stops'].find(p => p.stopId == id).stopName;
                 friendlyNames.push(name)
             }
 
